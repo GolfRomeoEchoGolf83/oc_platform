@@ -1,3 +1,34 @@
-hello_the_world:
-    path:     /hello-world
-    defaults: { _controller: ocplateformBundle:Advert:index }
+oc_plateform_home:
+    path:     /{page}
+    defaults:
+        _controller: ocplateformBundle:Advert:index
+        page:        1
+    requirements:
+        page: \d*
+
+oc_plateform_view:
+    path:     /advert/{id}
+    defaults:
+        _controller: ocplateformBundle:Advert:view
+    requirements:
+        id: \d+
+
+oc_plateform_add:
+    path:   /add
+    defaults:
+        _controller: ocplateformBundle:Advert:add
+
+oc_plateform_edit:
+    path:   /edit/{id}
+    defaults:
+        _controller: ocplateformBundle:Advert:edit
+    requirements:
+        id: \d+
+
+oc_plateform_delete:
+    path:   /delete/{id}
+    defaults:
+        _controller: ocplateformBundle:Advert:delete
+    requirements:
+        id: \d+
+

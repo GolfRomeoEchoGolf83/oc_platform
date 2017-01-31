@@ -21,4 +21,11 @@ class AdvertController extends Controller
 
 		return new Response($content);
 	}
+
+	// id parameter set to fit with route
+	public function viewAction($id)
+	{
+		// get id from database then return it to view
+		return new Response("Affiche l'annonce d'id ".$id);
+	}
 }

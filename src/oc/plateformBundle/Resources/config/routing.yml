@@ -1,0 +1,3 @@
+ocplateform_homepage:
+    path:     /
+    defaults: { _controller: ocplateformBundle:Default:index }

@@ -71,4 +71,17 @@ class AdvertController extends Controller
 		return $this->render('platformbundle:Advert:delete.html.twig');
 
 	}
+
+	public function menuAction($limit)
+	{
+		// list set
+		$listAdverts = array(
+			array('id' => 2, 'title' => 'Seeking for Symfony developer'),
+			array('id' => 5, 'title' => 'webmaster mission'),
+			array('id' => 9, 'title' => 'webdesigner internship')
+		);
+		return $this->render('plateformBundle:Advert:menu.html.twig', array(
+			'listAdverts' => $listAdverts
+		));
+	}
 }

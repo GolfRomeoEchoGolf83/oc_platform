@@ -1,0 +1,29 @@
+{%  extends "plateformBundle::layout.html.twig" %}
+
+{% block title %}Reading an add - {{ parent }}
+{% endblock %}
+
+{% block ocplatform_body %}{% endblock %}
+<h2>{{ advert.title }}</h2>
+<i>By {{ advert.author }}, {{ advert.date | date('d/m/Y') }}</i>
+
+<div class="well">
+    {{ advert.content }}
+</div>
+
+<p>
+    <a href="{{ path('oc_platform_home') }}" class="btn btn-default">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Back to the list
+    </a>
+    <a href="{{ path('oc_platform_edit', {'id': advert.id}) }}" class="btn btn-default">
+        <i class="glyphicon glyphicon-edit"></i>
+        Modifying add
+    </a>
+    <a href="{{ path('oc_platform_delete', {'id': advert.id}) }}" class="btn btn-danger">
+        <i class="glyphicon glyphicon-trash"></i>
+        Deleting add
+    </a>
+</p>
+
+{% endblock %}

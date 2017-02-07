@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Première page TWIG</title>
-</head>
-<body>
-<h1>Hello World</h1>
+{% block title %}
+Accueil - {{ parent() }}
+{% endblock %}
 
-<p>Un petit Hello world pour tester à nouveau les fonctionnalités de Symfony</p>
+{% block ocplatform_body %}
+    <h2>Adverts list</h2>
 
-
-</body>
-</html>
+    <ul>
+        {% for advert in listAdverts %}
+            <li>
+                <a href="{{ path('oc_platform_view', {'id': advert.id}) }}">
+                    {{ advert.title }}
+                </a>
+                by {{ advert.author }},
+                {{ advert.date|date('d/m/Y') }}
+            </li>
+            {% else %}
+                <li>No add yet</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

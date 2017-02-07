@@ -1,0 +1,21 @@
+{%  extends "plateformBundle::layout.html.twig" %}
+
+{% block title %}
+Modifying an add
+{%  endblock %}
+
+{%  block ocplatform_body %}
+<h2>Modifying an add</h2>
+    {{ include("plateformBundle:Advert:form.html.twig") }}
+    <p>
+    You are editing an add, please be kind enough to keep it relevant
+    </p>
+
+    <p>
+        <a href="{{ path('oc_platform_view', {'id': advert.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Back to the add
+        </a>
+    </p>
+
+{% endblock %}

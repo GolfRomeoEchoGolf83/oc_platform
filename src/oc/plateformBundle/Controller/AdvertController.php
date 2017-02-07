@@ -23,14 +23,16 @@ class AdvertController extends Controller
 		}
 
 		// call index template
-		return $this->render('plateformbundle:Advert:index.html.twig');
+		return $this->render('plateformBundle:Advert:index.html.twig', array(
+			'listAdverts' => array()
+		));
 	}
 
 	// id parameter set to fit with route
 	public function viewAction($id)
 	{
 		// get id from database then return it to view
-		return $this->render('plateformbundle:Advert:view.html.twig', array(
+		return $this->render('plateformBundle:Advert:view.html.twig', array(
 			'id' => $id
 		));
 	}
@@ -46,7 +48,7 @@ class AdvertController extends Controller
 			));
 		}
 		// if request isn't in POST, show form
-		return $this->render('plateformbundle:Advert:add.html.twig');
+		return $this->render('plateformBundle:Advert:add.html.twig');
 	}
 
 	public function editAction($id, Request $request)

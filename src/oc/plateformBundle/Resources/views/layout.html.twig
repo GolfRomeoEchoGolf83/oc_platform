@@ -1,0 +1,17 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+Annonces - {{ parent() }}
+{% endblock %}
+
+{%  block body %}
+    {# common subtitle for every bundle's views #}
+    <h1>Annonces</h1>
+
+    <hr>
+
+    {# block to be filled by bundle's views #}
+    {% block ocplatform_body %}
+    {% endblock %}
+
+{% endblock %}

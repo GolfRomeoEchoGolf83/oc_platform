@@ -31,9 +31,17 @@ class AdvertController extends Controller
 	// id parameter set to fit with route
 	public function viewAction($id)
 	{
+		$advert = array(
+			'title'     => 'Seeking for Symfony developer',
+			'id'        => '$id',
+			'author'    => 'Alex',
+			'content'   => 'We are looking for a junior Symfony developer',
+			'date'      => new \DateTime()
+		);
+
 		// get id from database then return it to view
 		return $this->render('plateformBundle:Advert:view.html.twig', array(
-			'id' => $id
+			'advert'    => $advert
 		));
 	}
 
